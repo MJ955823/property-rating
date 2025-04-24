@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rating: 5 Stars</title>
-  </head>
-  <body>
-    <form action="https://formspree.io/f/movdqoaz" method="POST" id="ratingForm">
-      <input type="hidden" name="Client" value="Svf">
-      <input type="hidden" name="WorkOrder" value="WO401">
-      <input type="hidden" name="Rating" value="5">
-    </form>
-    <script>
-      document.getElementById('ratingForm').submit();
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You!</title>
+</head>
+<body onload="document.forms[0].submit()">
+  <form action="https://formspree.io/f/movdqoaz" method="POST">
+    <input type="hidden" name="client" value="Svf" />
+    <input type="hidden" name="workOrder" value="WO401" />
+    <input type="hidden" name="rating" value="5" />
+  </form>
+  <h2>⭐⭐⭐⭐⭐</h2>
+  <p>Thank you for your 5-star rating! We're delighted to have met your expectations.</p>
+</body>
 </html>
