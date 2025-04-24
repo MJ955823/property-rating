@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Thank You!</title>
-</head>
-<body onload="document.forms[0].submit()">
-  <form action="https://formspree.io/f/movdqoaz" method="POST">
-    <input type="hidden" name="client" value="Svf" />
-    <input type="hidden" name="workOrder" value="WO401" />
-    <input type="hidden" name="email" value="client@example.com" />
-    <input type="hidden" name="rating" value="3" />
-  </form>
-  <h2>⭐⭐⭐</h2>
-  <p>Thanks for rating us! We're glad it was satisfactory — and we'll aim even higher next time.</p>
-</body>
+  <head>
+    <title>Thank You!</title>
+    <script>
+      function getParam(key) {
+        return new URLSearchParams(window.location.search).get(key) || "";
+      }
+
+      window.onload = function () {
+        const client = getParam("client");
+        const wo = getParam("wo");
+        const rating = "3";
+
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = "https://formspree.io/f/movdqoaz";
+
+        const fields = { client, wo, rating };
+
+        for (let key in fields) {
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = key;
+          input.value = fields[key];
+          form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+      };
+    </script>
+  </head>
+  <body>
+    <p>Thanks for your feedback!</p>
+  </body>
 </html>
